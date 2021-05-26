@@ -72,6 +72,11 @@ exports.handler = async function(event) {
   // return value of our lambda
   return {
     statusCode: 200,
-    body: JSON.stringify(returnValue)
+    body: JSON.stringify(returnValue),
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Headers": "Content-Type",
+      "Access-Control-Allow-Methods": "GET, POST, OPTION",
+    }
   }
 }
